@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+		{% load static %}
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  		<link rel="stylesheet" href="{% static 'home.css' %}">
+        <!--<link rel="stylesheet" href="home.css"> -->
+        <title>Agenda</title>
+
+        <style>
+            	.iniciar{
+					  background: #35D104;
+					  border: 5px;
+					  border-radius: 10px;
+					  padding: 10px;
+					  color: white;
+					  margin: 12px 0;
+					  font-size: 1em;
+					  letter-spacing: 6px;
+					  line-height: 1em;
+
+					}
+						.iniciar:hover{
+							background: #F80C0C;
+							color:#030303;
+						}
+            	.cerrar{
+					  background: #FC2F2F;
+					  border: 5px;
+					  border-radius: 10px;
+					  padding: 10px;
+					  color: white;
+					  margin: 12px 0;
+					  font-size: 1em;
+					  letter-spacing: 6px;
+					  line-height: 1em;
+
+					}
+						.cerrar:hover{
+							background: #red;
+							color:#030303;
+						}
+        </style>
+
+</head>
+<body>
+    <div class="container logo-nav-container">
+				<img src="https://literacy.concordia.ca/img/cslp_logo_1.png"  width="403"  height="100" padding="60px">
+				<!-- <img src= "LOGO.png"  width="180"  height="90" padding="5px"> -->
+				<nav class="navegar">
+					<ul>
+						<li ><a href="/homepage/" ><h2 style=" color: #34495E;">Home</h2></a></li>
+						<li><a href="/new_ot/"><h2 style=" color: #FC2F2F;">Room</h2></a></li>
+						<li><a href="/new_client/"><h2 style=" color: #FC2F2F;">Speakers</h2></a></li>
+                        <li><a href="/test/"><h2 style=" color: #FC2F2F;">Test</h2></a></li>
+
+					</ul>
+				</nav>
+    </div>
+	<header class="header">
+		<h1><center>Concordia Conference System</center></h1>
+	</header>
+
+<main>
+
+{% if Event %}
+            {% for x in Event %}
+    <center>
+
+                <table  border=1 cellspacing=0 cellpadding=15 bordercolor="#FC2F2F">
+                        <tr>  <!-- divisor de fila -->
+                            <th scope="col" style="font-weight: lighter;letter-spacing: 3px;"> Event</th>
+                            <th scope="col" style="font-weight: lighter;letter-spacing: 3px;"> Description</th>
+                            <th scope="col" style="font-weight: lighter;letter-spacing: 3px;"> Time</th>
+                            <th scope="col" style="font-weight: lighter;letter-spacing: 3px;"> Room</th>
+                            <th scope="col" style="font-weight: lighter;letter-spacing: 3px;"> Speaker</th>
+                        </tr>
+                        <tr style="background:#FEDAD7;">
+                            <td style="font-weight: lighter;letter-spacing: 3px; color:blue;">{{x.NameEvent}}</td>
+                            <td style="font-weight: lighter;letter-spacing: 3px; color:blue;">{{x.Description}}</td>
+                            <td style="font-weight: lighter;letter-spacing: 3px;">{{x.Time}}</td>
+                            <td style="font-weight: lighter;letter-spacing: 3px;">{{x.NameRoom}}</td>
+                            <td style="font-weight: lighter;letter-spacing: 3px;">{{x.speaker}}</td>
+
+                        </tr>
+
+                </table></br>
+                    <table border=1 cellspacing=0 cellpadding=15 bordercolor="#FC2F2F">
+                        <tr>
+                            <td>OBSERVACIONES</td>
+                        </tr>
+                        <tr>
+                            <td>{{x.observaciones}}</td>
+                        </tr>
+                    </table> </br>
+    </center>
+        {% endfor %}
+        {% else %}
+    {% endif %}
+</main>
+</body>
+</html>

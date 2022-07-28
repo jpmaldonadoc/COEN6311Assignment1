@@ -1,0 +1,31 @@
+{% extends "ConferenceManager/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+    {% for Event in Agenda %}
+
+<div><p>
+                    <table  border=1 cellspacing=0 cellpadding=15 bordercolor="##2F2F30">
+                        <tr style="background:#A2A3A3;">  <!-- divisor de fila -->
+                            <th scope="col" style="color: black;letter-spacing: 3px;"> EVENT</th>
+                            <th scope="col" style="color: black;letter-spacing: 3px;"> DESCRIPTION</th>
+                            <th scope="col" style="color: black;letter-spacing: 3px;"> TIME</th>
+                            <th scope="col" style="color: black;letter-spacing: 3px;"> LOCATION</th>
+                        </tr>
+                        <tr style="background:#F5F2F2;">
+                            <td style="font-weight: lighter;letter-spacing: 3px;">{{Event.NameEvent}}</td>
+                            <td style="font-weight: lighter;letter-spacing: 3px;">{{Event.Description}}</td>
+                            <td style="font-weight: lighter;letter-spacing: 3px;">{{Event.Time}}</td>
+                            <td style="font-weight: lighter;letter-spacing: 3px;">{{Event.NameRoom}}</td>
+                        </tr>
+                </table>
+
+
+</p></div>
+
+    {% endfor %}
+
+{% endblock %}
+

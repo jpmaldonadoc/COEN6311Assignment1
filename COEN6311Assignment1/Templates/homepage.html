@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+		{% load static %}
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  		<link rel="stylesheet" href="{% static 'home.css' %}">
+        <!--<link rel="stylesheet" href="home.css"> -->
+        <title>Home Page</title>
+
+</head>
+<body>
+<div class="container logo-nav-container">
+				<img src="https://literacy.concordia.ca/img/cslp_logo_1.png"  width="403"  height="100" padding="60px">
+</div>
+	<header class="header">
+		<h1><center>Concordia Conference</center></h1>
+	</header>
+		<style type="text/css">
+        .boton_desple {
+              background: #0B0B0A;
+              border: 10px;
+              border-radius: 10px;
+              padding: 20px;
+              color: white;
+              margin: 12px 0;
+              font-size: 1.5em;
+              letter-spacing: 6px;
+              line-height: 1.3em;
+            }
+        .links a{
+            text-decoration: none;
+            color:#0B0B0A;
+            display:block;
+            font-size: 1.5em;
+            letter-spacing: 6px;
+            line-height: 1.3em;
+           }
+        .links {
+            background-color:#E76B63;
+            width: 220px;
+            display:none;
+            border-radius: 10px;
+            padding: 20px;
+            line-height: 1.5em;
+        }
+        .links a:hover{
+            background-color: red;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .desplegable:hover .links{
+            display:block;
+        }
+
+    </style>
+	<main class="main">
+		<div>
+		<center>
+				<nav class="navegar">
+					<ul>
+						<input class="botons" type="submit" onclick="location.href = '/buscar/'" value="CONSULTA">
+						<input class="botons" type="submit" onclick="location.href = '/new_client/'" value="+ CLIENTE">
+						<input class="botons" type="submit" onclick="location.href = '/new_ot/'" value="+ SERVICIO">
+						<input style="background-color:red;" class="botons" type="submit" onclick="location.href = '/fidelizar/'" value="FIDELIZAR">
+    					<div class="desplegable">
+							<button  class="boton_desple">ORDENES</button>
+								<div class="links">
+									<a href="/all_orders/">TODAS</a>
+									<a href="/active_orders/">ABIERTAS</a>
+									<a href="/running_orders/">EN PROCESO</a>
+									<a href="/closed_orders/">CERRADAS</a>
+								</div>
+        				</div>
+
+
+					</ul>
+				</nav>
+		</center>
+		</div>
+
+	</main>
+<footer>
+	<div class="container" align="right"> <p>POWERED BY <img src="{% static 'Lyft.png' %}"  width="110"
+     height="50"> </p>
+	</div>
+</footer>
+</body>
+</html>

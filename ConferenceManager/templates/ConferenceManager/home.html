@@ -1,0 +1,43 @@
+{% extends "ConferenceManager/base.html" %}
+
+{% load static %}
+
+{% block content %}
+   <!-- Heading -->
+   <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'ConferenceManager/img/principal.jpg' %}" alt="">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-upper">Register for an event</span>
+            <span class="section-heading-lower">Go to Registration page</span>
+          </h2>
+          <p class="mb-3">Please submit your event well in advance, to allow at least five business days for processing.</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+    <!-- Message -->
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper"></span>
+                <span class="section-heading-lower">Plan events on campus</span>
+              </h2>
+              <p class="mb-0">Whether you are a student, staff or a member of the public, if you’re organizing a student group activity, an association conference or even a film festival, you have to contact the conference organizer at the following email: jpmaldonadoc@gmail.com.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
+
